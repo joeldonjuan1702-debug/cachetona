@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #bde5ff, #ffd9eb);
+    color: #527c9d;
+    overflow-x: hidden;
+}
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+h1 {
+    color: #478bbd;
+    font-size: 35px;
+    margin-bottom: 20px;
+    animation: aparecer 1s ease;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.frase {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    color: #bd6594;
+}
+
+.stitch {
+    margin: 20px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.stitch img {
+    width: 260px;
+    max-width: 80vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 8px 12px #8ebbdc);
+}
+
+button {
+    background: #ff9fc9;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #d99ab8;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff82ba;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Corazones flotantes */
+
+.corazon {
+    position: fixed;
+    bottom: -30px;
+    color: #ff8fbd;
+    font-size: 24px;
+    animation: subir 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(40deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 27px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .stitch img {
+        width: 220px;
+    }
+}
+/* Estilo de nuestras fotografías */
+
+.foto-recuerdo {
+    background: white;
+    padding: 12px 12px 20px;
+    border-radius: 12px;
+    width: 320px;
+    max-width: 85vw;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(80, 120, 160, 0.25);
+    transform: rotate(-2deg);
+    animation: aparecer 1s ease;
+}
+
+.foto-recuerdo img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+    border-radius: 5px;
+}
+
+.frase {
+    background: rgba(255, 255, 255, 0.65);
+    padding: 20px;
+    border-radius: 20px;
+    color: #bd6594;
+    max-width: 650px;
+    margin: 15px auto;
+    line-height: 1.7;
+}
+
+#siguienteFoto {
+    margin-top: 15px;
+    animation: aparecer 1s ease;
+}
+/* Corazón secreto */
+
+.corazon-gigante {
+    font-size: 100px;
+    margin: 20px;
+    cursor: pointer;
+    animation: latido 1s infinite;
+}
+
+.mensaje-oculto {
+    display: none;
+}
+
+.mostrar-mensaje {
+    display: block;
+    animation: aparecer 1s ease;
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
